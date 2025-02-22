@@ -40,4 +40,3 @@ resource "aws_security_group_rule" "allow_ssh" {
   protocol         = "tcp"
   cidr_blocks      = ["0.0.0.0/0"]  # Allows SSH from anywhere (change for security)
 }
-
