@@ -33,3 +33,12 @@ node_modules/
 
 # Python virtual environments (if applicable)
 venv/
+
+# local .terraform dir
+.terraform/*
+
+# Ignore all .tf state files
+*.tfstate
+*.tfstate.*
+
+.terraform/

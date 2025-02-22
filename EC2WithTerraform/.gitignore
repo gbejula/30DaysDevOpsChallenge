@@ -1,0 +1,13 @@
+# Terraform state & backup files (sensitive data)
+terraform.tfstate
+terraform.tfstate.backup
+
+# Terraform cache & provider files
+.terraform/
+
+# Auto-generated variable files (possible secrets)
+*.tfvars
+*.auto.tfvars
+
+# Terraform plan files
+*.tfplan
