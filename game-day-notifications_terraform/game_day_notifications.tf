@@ -7,6 +7,13 @@ resource "aws_sns_topic" "nba_game_alerts" {
   name = "nba_game_alerts"
 }
 
+# Subscribe an email address to the SNS topic
+resource "aws_sns_topic_subscription" "email_subscription" {
+  topic_arn = aws_sns_topic.nba_game_alerts.arn
+  protocol  = "email"
+  endpoint  = "gbejula@gmail.com" # Replace with your email address
+}
+
 # IAM Role for Lambda
 resource "aws_iam_role" "lambda_role" {
   name = "nba_lambda_role"
@@ -53,7 +60,7 @@ resource "aws_iam_role_policy_attachment" "attach_sns_publish" {
   policy_arn = aws_iam_policy.sns_publish_policy.arn
 }
 
-
+# To obtain the AWS Account ID
 data "aws_caller_identity" "current" {}
 
 # IAM Policy to Read From Parameter Store
